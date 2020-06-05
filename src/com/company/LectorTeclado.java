@@ -9,8 +9,9 @@ public class LectorTeclado
 {
     // VARIABLES
 
-    private static LectorTeclado instance;
-    private Scanner m_sc;
+    Scanner m_sc;
+    static LectorTeclado instance;
+
 
     // METODOS
 

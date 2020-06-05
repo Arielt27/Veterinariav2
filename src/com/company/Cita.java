@@ -204,7 +204,7 @@ public class Cita
 
     public void mostrarCitas()
     {
-        for(int i = 0; i<10; i++)
+        for(int i = 1; i<tamaño-1; i++)
         {
             System.out.println("Numero de Cita: " + i);
             System.out.println("Nombre Cliente: " + Cliente[i]);

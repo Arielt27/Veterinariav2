@@ -20,9 +20,11 @@ public class Diagnostico
     String[] Mascota = new String[tamaño];
     String[] Diagnosticos = new String[tamaño];
 
+
     // OBJETOS
     Scanner entrada = new Scanner(System.in);
     LectorTeclado entrada2 = new LectorTeclado();
+
 
     // METODOS
 
@@ -186,13 +188,14 @@ public class Diagnostico
 
     public void mostrarDiagnosticos()
     {
-        for(int i = 0; i<10; i++)
+        for(int i = 1; i<tamaño-1; i++)
         {
             // MOSTRAR DATOS DE LA CITA INDICADA
             System.out.println("Numero de Diag: " + i);
             System.out.println("Nombre Cliente: " + Cliente[i]);
             System.out.println("Nombre Mascota: " + Mascota[i]);
             System.out.println("Diagnostico:    " + Diagnosticos[i]);
+            System.out.println(" ");
         }
     }
 }

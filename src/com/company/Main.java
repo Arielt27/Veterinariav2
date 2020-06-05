@@ -12,12 +12,13 @@ public class Main
         int opcDiag;
         int opcRep;
 
+
         // CREAR OBJETOS
 
         Cita Citas = new Cita();
-        Diagnostico Diagnosticos = new Diagnostico();
         Menus showMenu = new Menus();
         LectorTeclado lector = new LectorTeclado();
+        Diagnostico Diagnosticos = new Diagnostico();
 
 
         // PROGRAMA PRINCIPAL
@@ -137,9 +138,9 @@ public class Main
                 case 3: // REPORTES
 
                     showMenu.menuRep();
-                    opcDiag = lector.leerMenus("Ingrese una opcion correcta");
+                    opcRep = lector.leerMenus("Ingrese una opcion correcta");
 
-                    switch(opcDiag)
+                    switch(opcRep)
                     {
                         case 1: // REPORTE DE CITAS
 
@@ -148,7 +149,7 @@ public class Main
                             Citas.mostrarCitas();
 
                             showMenu.menuRep();
-                            opcDiag = lector.leerMenus("Ingrese una opcion correcta");
+                            opcMenu = lector.leerMenus("Ingrese una opcion correcta");
 
                             break;
 
@@ -159,14 +160,14 @@ public class Main
                             Diagnosticos.mostrarDiagnosticos();
 
                             showMenu.menuRep();
-                            opcDiag = lector.leerMenus("Ingrese una opcion correcta");
+                            opcMenu = lector.leerMenus("Ingrese una opcion correcta");
 
                             break;
 
                         case 3: // MENU PRINCIPAL
 
                             showMenu.menuRep();
-                            opcDiag = lector.leerMenus("Ingrese una opcion correcta");
+                            opcMenu = lector.leerMenus("Ingrese una opcion correcta");
 
                             break;
                     }
