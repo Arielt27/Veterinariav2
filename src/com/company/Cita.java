@@ -22,10 +22,10 @@ public class Cita
     LocalDate fecha2;
     LocalTime hora2;
     String[] Cliente = new String[tamaño];
-    String[] Mascota = new String[tamaño];;
-    String[] Status = new String[tamaño];;
-    LocalDate[] Fechas = new LocalDate[tamaño];;
-    LocalTime[] Horas = new LocalTime[tamaño];;
+    String[] Mascota = new String[tamaño];
+    String[] Status = new String[tamaño];
+    LocalDate[] Fechas = new LocalDate[tamaño];
+    LocalTime[] Horas = new LocalTime[tamaño];
 
 
     // OBJETOS
@@ -66,12 +66,6 @@ public class Cita
                 System.out.println(" ");
                 System.out.println("Cita Agendada");
                 System.out.println(" ");
-
-                System.out.println(Cliente[pos]);
-                System.out.println(Mascota[pos]);
-                System.out.println(Fechas[pos]);
-                System.out.println(Horas[pos]);
-                System.out.println(Status[pos]);
 
                 pos = pos + 1;
 
@@ -133,6 +127,7 @@ public class Cita
                     System.out.println("Nombre Mascota: " + Mascota[pos2]);
                     System.out.println("Fecha de Cita:  " + Fechas[pos2]);
                     System.out.println("Hora de Cita:   " + Horas[pos2]);
+
                 }
 
                 System.out.print("¿Desea modificar otra cita? y/n ");
@@ -175,9 +170,9 @@ public class Cita
                 System.out.println("Hora de Cita:   " + Horas[pos3]);
 
                 System.out.println("¿Desea cancelar la cita? y/n");
-                ask = entrada2.nuevaCita();
+                ask2 = entrada2.nuevaCita();
 
-                if(ask.equals(Y))
+                if(ask2.equals(Y))
                 {
                     // Agregando Status de Cancelada a la cita
                     Status[pos3] = "Cancelada";
@@ -204,6 +199,20 @@ public class Cita
             }
 
             vuelta3 = true;
+        }
+    }
+
+    public void mostrarCitas()
+    {
+        for(int i = 0; i<10; i++)
+        {
+            System.out.println("Numero de Cita: " + i);
+            System.out.println("Nombre Cliente: " + Cliente[i]);
+            System.out.println("Nombre Mascota: " + Mascota[i]);
+            System.out.println("Fecha de Cita:  " + Fechas[i]);
+            System.out.println("Hora de Cita:   " + Horas[i]);
+            System.out.println("Status de Cita: " + Status[i]);
+            System.out.println(" ");
         }
     }
 }

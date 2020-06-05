@@ -7,7 +7,7 @@ public class Main
     {
         // VARIABLES
 
-        int opcMenu = 0;
+        int opcMenu;
         int opcCitas;
         int opcDiag;
         int opcRep;
@@ -15,6 +15,7 @@ public class Main
         // CREAR OBJETOS
 
         Cita Citas = new Cita();
+        Diagnostico Diagnosticos = new Diagnostico();
         Menus showMenu = new Menus();
         LectorTeclado lector = new LectorTeclado();
 
@@ -81,19 +82,98 @@ public class Main
                             break;
                     }
 
-
                     break;
 
                 case 2: // DIAGNOSTICOS
+
+                    showMenu.menuDiag();
+                    opcDiag = lector.leerMenus("Ingrese una opcion correcta");
+
+                    switch(opcDiag)
+                    {
+                        case 1: // REGISTRAR DIAGNOSTICO
+
+                            System.out.println("****Registrar Diagnosticos*****");
+
+                            Diagnosticos.registrarDiagnostico();
+
+                            showMenu.menuP();
+                            opcMenu = lector.leerMenus("Ingrese una opcion correcta ");
+
+                            break;
+
+                        case 2: // MODIFICAR DIAGNOSTICO
+
+                            System.out.println("****Modificar Diagnosticos*****");
+
+                            Diagnosticos.modificarDiagnostico();
+
+                            showMenu.menuP();
+                            opcMenu = lector.leerMenus("Ingrese una opcion correcta ");
+
+                            break;
+
+                        case 3: // ELIMINAR DIAGNOSTICO
+
+                            System.out.println("*****Eliminar Diagnosticos*****");
+
+                            Diagnosticos.eliminarDiagnostico();
+
+                            showMenu.menuP();
+                            opcMenu = lector.leerMenus("Ingrese una opcion correcta ");
+
+                            break;
+
+                        case 4: // MENU PRINCIPAL
+
+                            showMenu.menuP();
+                            opcMenu = lector.leerMenus("Ingrese una opcion correcta ");
+
+                            break;
+                    }
 
                     break;
 
                 case 3: // REPORTES
 
+                    showMenu.menuRep();
+                    opcDiag = lector.leerMenus("Ingrese una opcion correcta");
+
+                    switch(opcDiag)
+                    {
+                        case 1: // REPORTE DE CITAS
+
+                            System.out.println("********Reporte de Citas*******");
+
+                            Citas.mostrarCitas();
+
+                            showMenu.menuRep();
+                            opcDiag = lector.leerMenus("Ingrese una opcion correcta");
+
+                            break;
+
+                        case 2: // REPORTE DE DIAGNOSTICOS
+
+                            System.out.println("****Reporte de Diagnosticos****");
+
+                            Diagnosticos.mostrarDiagnosticos();
+
+                            showMenu.menuRep();
+                            opcDiag = lector.leerMenus("Ingrese una opcion correcta");
+
+                            break;
+
+                        case 3: // MENU PRINCIPAL
+
+                            showMenu.menuRep();
+                            opcDiag = lector.leerMenus("Ingrese una opcion correcta");
+
+                            break;
+                    }
+
                     break;
             }
         }
-
         System.out.println("Gracias por utilizar este programa");
     }
 }
